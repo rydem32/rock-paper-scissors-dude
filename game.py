@@ -1,5 +1,7 @@
 # game.py
 
+import random
+
 print("Rock, Paper, Scissors, Shoot!")
 
 
@@ -29,16 +31,31 @@ print("USER CHOSE: ", x)
 
 # more about datatypes lists, and tuples, etc next class
 #valid_options = ("rock", "paper", "scissors") # tuple
-valid_options = ["rock", "paper", "scissors"] # list
 
-c = random.choice(valid_options)
+valid_options = ["rock", "paper", "scissors"]
 
-print("COMPUTER CHOSE:", c)
-
-
-#generate a computer choice
+computer_choice = random.choice(valid_options)
 
 
-#determine a winner
+print("COMPUTER CHOICE:", computer_choice)
 
+# DETERMINE THE WINNER
+#source: https://realpython.com/python-rock-paper-scissors/#determine-a-winner
 
+if x == computer_choice:
+    print(f"Both players selected {x}. It's a tie!")
+elif x == "rock":
+    if computer_choice == "scissors":
+        print("Rock smashes scissors! You win!")
+    else:
+        print("Paper covers rock! You lose.")
+elif x == "paper":
+    if computer_choice == "rock":
+        print("Paper covers rock! You win!")
+    else:
+        print("Scissors cuts paper! You lose.")
+elif x == "scissors":
+    if computer_choice == "paper":
+        print("Scissors cuts paper! You win!")
+    else:
+        print("Rock smashes scissors! You lose.")
