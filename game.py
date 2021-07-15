@@ -1,7 +1,6 @@
 # game.py
 
 import random
-
 import os
 from dotenv import load_dotenv
 
@@ -9,18 +8,19 @@ load_dotenv() #> loads contents of the .env file into the script's environment
 
 z = os.getenv("USER_NAME")
 
-print(z) # reads the variable from the environment
-#> "Hello World"
-
 
 
 #exit()
+
+print("----------------")
+print("Welcome", z) # reads the variable from the environment
+print("----------------")
 
 print("Rock, Paper, Scissors, Shoot!")
 
 
 # ask for user input
-x = input("Please choose 'rock', 'paper', or 'scissors'")
+x = input("Please choose 'rock', 'paper', or 'scissors':")
 print(x)
 
 # validate user input
@@ -73,3 +73,7 @@ elif x == "scissors":
         print("Scissors cuts paper! You win!")
     else:
         print("Rock smashes scissors! You lose.")
+
+print("----------------")
+print("Please Play Again")
+print("----------------")
